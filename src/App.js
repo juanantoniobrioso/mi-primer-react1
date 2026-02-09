@@ -1,6 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
 
+function Contenedor(props) {
+return (
+<div style={{ border: '2px solid #000', padding: '10px' }}>
+<h3>Contenedor</h3>
+{props.children}
+</div>
+);
+}
+function Header(){
+  return(
+    <div>Header</div>
+  ) 
+}
+
+function Footer(){
+  return(
+    <div>Footer</div>
+  ) 
+}
+
+function App(){
+  return(
+    <Contenedor>
+      <p>Este es un contenido dentro del contenedor.</p>
+      <button>Click aquí</button>
+    </Contenedor>
+  ) 
+}
+/*
 function App() {
   return (
     <div className="App">
@@ -18,8 +47,20 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <div>
+        <Saludo nombre="Ana" apellido1="García" />
+        <Saludo nombre="Luis" apellido1="Pérez"/>
+      </div>
+
+      <Contenedor>
+        <p>Este es un contenido dentro del contenedor.</p>
+        <button>Click aquí</button>
+      </Contenedor>
     </div>
   );
 }
+  */
 
-export default App;
+export {App, Header, Footer, Contenedor};
+
