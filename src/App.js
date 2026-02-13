@@ -2,23 +2,37 @@ import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+/*import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';*/
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { Header } from './componentes/Header/Header.jsx';
+import { Footer } from './componentes/Footer/Footer.jsx';
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
+import { Home } from './pages/Home';
+import { Sobre } from './pages/Sobre-nosotros';
+import { Contacto } from './pages/Contacto';
 
-function Contenedor(props) {
-return (
-<div style={{ border: '2px solid #000', padding: '10px' }}>
-<h3>Contenedor</h3>
-{props.children}
-</div>
-);
+/*
+function Home(){
+  return <h2>Página de inicio</h2>;
 }
 
+function About(){
+  return <h2>Sobre nosotros</h2>;
+}
+  */
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Sobre" element={<Sobre />} />
+        <Route path="/Contacto" element={<Contacto />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 
 /*
@@ -56,10 +70,12 @@ function App() {
   );
 }
 */
+
+/*
 function App() {
   return (
     <Router>
-      <Header /> {/* Siempre visible */}
+      <Header /> {}
       
       <main style={{ minHeight: '80vh' }}>
         <Routes>
@@ -69,10 +85,11 @@ function App() {
         </Routes>
       </main>
 
-      <Footer /> {/* Siempre visible */}
+      <Footer /> {}
     </Router>
   );
 }
+*/
 
 /*
 function App() {
@@ -107,5 +124,5 @@ function App() {
 }
   */
 
-export {App, Contenedor};
+export { App };
 
