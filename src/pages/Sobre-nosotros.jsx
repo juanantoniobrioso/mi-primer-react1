@@ -70,6 +70,13 @@ function Sobre() {
             <span className="small text-uppercase text-muted">Marketing</span>
           </div>
         </div>
+        {about.slice(0, 1).map(post => (
+        <div key={post.id}>
+          <h3>{post.title}</h3>
+          <p>{post.body}</p>
+          <hr />
+        </div>
+      ))}
       </div>
     </div>
   );
